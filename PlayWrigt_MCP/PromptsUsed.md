@@ -10,3 +10,7 @@ Negative_TestCases_VWO.md, Can you go through all the test cases in this file an
 
 4. after TC execution, store the execution summary in custom HTML report:
 Based on the custom report I have shared in this project take the data from the above execution and create a HTML report out of it and stored the output folder under demo
+
+
+push to git: 
+Please commit all the files and push to git https://github.com/schimbili/AITester_Repo.git
