@@ -4,12 +4,31 @@
 |-------|-------|
 | **Version** | 1.0 |
 | **Author** | QA Automation Team |
-| **Date** | 2026-03-17 |
+| **Date** | 2026-03-19 |
 | **Total Test Cases** | 10 |
 
 ---
 
-## TC-001: Homepage Loads Correctly
+## Test Case Format
+
+Each test case follows this structure:
+
+| Field | Description |
+|-------|-------------|
+| **TC ID** | Unique identifier (TC-001, TC-002, ...) |
+| **Title** | Brief description of what is tested |
+| **Preconditions** | What must be true before the test |
+| **Steps** | Step-by-step instructions |
+| **Expected Result** | What should happen |
+| **Priority** | High / Medium / Low |
+| **Category** | Smoke / Functional / Negative |
+| **Spec File** | Corresponding Playwright spec file |
+
+---
+
+## Test Cases
+
+### TC-001: Homepage Loads Correctly
 
 | Field | Value |
 |-------|-------|
@@ -20,16 +39,16 @@
 **Preconditions:** Browser is open, internet is accessible
 
 **Steps:**
-1. Navigate to `https://the-internet.herokuapp.com`
-2. Wait for page to load completely
-3. Check the page title
-4. Verify the heading "Welcome to the-internet" is visible
+1. Navigate to homepage
+2. Wait for page to load
+3. Check page title
+4. Verify heading is visible
 
-**Expected Result:** Page loads with correct title and heading
+**Expected Result:** Page loads with correct title "The Internet" and heading "Welcome to the-internet"
 
 ---
 
-## TC-002: Navigation Links Work
+### TC-002: Navigation Links Work
 
 | Field | Value |
 |-------|-------|
@@ -41,15 +60,15 @@
 
 **Steps:**
 1. Navigate to homepage
-2. Verify navigation links are present
-3. Click on "Form Authentication" link
-4. Verify navigation to the login page
+2. Verify links are present
+3. Click "Form Authentication" link
+4. Verify login page loads
 
 **Expected Result:** Links navigate to correct pages
 
 ---
 
-## TC-003: Input Fields Accept Text
+### TC-003: Input Fields Accept Text
 
 | Field | Value |
 |-------|-------|
@@ -60,16 +79,16 @@
 **Preconditions:** Application is accessible
 
 **Steps:**
-1. Navigate to the Inputs page (`/inputs`)
-2. Locate the number input field
-3. Type a value into the input field
-4. Verify the value is entered correctly
+1. Navigate to /inputs
+2. Locate number input
+3. Type "42"
+4. Verify value
 
-**Expected Result:** Input field accepts and displays the entered value
+**Expected Result:** Input field accepts and displays "42"
 
 ---
 
-## TC-004: Form Authentication Works
+### TC-004: Form Authentication Page
 
 | Field | Value |
 |-------|-------|
@@ -80,16 +99,17 @@
 **Preconditions:** Login page is accessible
 
 **Steps:**
-1. Navigate to `/login`
-2. Verify the login form is present
-3. Verify username and password fields exist
-4. Verify the Login button is visible
+1. Navigate to /login
+2. Verify form heading
+3. Check username field
+4. Check password field
+5. Check login button
 
-**Expected Result:** Login form is present with all required fields
+**Expected Result:** Login form has all required fields
 
 ---
 
-## TC-005: Valid Login Succeeds
+### TC-005: Valid Login Succeeds
 
 | Field | Value |
 |-------|-------|
@@ -100,18 +120,17 @@
 **Preconditions:** Login page is accessible
 
 **Steps:**
-1. Navigate to `/login`
-2. Enter username: `tomsmith`
-3. Enter password: `SuperSecretPassword!`
-4. Click the Login button
-5. Verify success message appears
-6. Verify secure area page is displayed
+1. Navigate to /login
+2. Enter "tomsmith"
+3. Enter "SuperSecretPassword!"
+4. Click Login
+5. Verify success message
 
-**Expected Result:** User logs in successfully, sees success message
+**Expected Result:** User logs in, sees "You logged into a secure area!"
 
 ---
 
-## TC-006: Invalid Login Shows Error
+### TC-006: Invalid Login Shows Error
 
 | Field | Value |
 |-------|-------|
@@ -122,17 +141,17 @@
 **Preconditions:** Login page is accessible
 
 **Steps:**
-1. Navigate to `/login`
-2. Enter username: `invaliduser`
-3. Enter password: `invalidpass`
-4. Click the Login button
-5. Verify error message appears
+1. Navigate to /login
+2. Enter "invaliduser"
+3. Enter "invalidpass"
+4. Click Login
+5. Verify error message
 
-**Expected Result:** Error message is displayed, user remains on login page
+**Expected Result:** Error "Your username is invalid!" appears
 
 ---
 
-## TC-007: Broken Link Detection [EXPECTED FAIL]
+### TC-007: Broken Link Detection [EXPECTED FAIL]
 
 | Field | Value |
 |-------|-------|
@@ -143,15 +162,15 @@
 **Preconditions:** Application is accessible
 
 **Steps:**
-1. Navigate to `/broken_images`
-2. Find all images on the page
-3. Assert that a non-existent image URL returns 200
+1. Navigate to /broken_images
+2. Find broken image
+3. Assert image returns 200
 
-**Expected Result:** INTENTIONAL FAILURE - asserts a broken image returns 200 status
+**Expected Result:** INTENTIONAL FAILURE - broken image returns 404 not 200
 
 ---
 
-## TC-008: Page Title Verification [EXPECTED FAIL]
+### TC-008: Page Title Verification [EXPECTED FAIL]
 
 | Field | Value |
 |-------|-------|
@@ -163,13 +182,13 @@
 
 **Steps:**
 1. Navigate to homepage
-2. Assert the page title is "Wrong Title That Does Not Exist"
+2. Assert title is "Wrong Title That Does Not Exist"
 
-**Expected Result:** INTENTIONAL FAILURE - title does not match
+**Expected Result:** INTENTIONAL FAILURE - actual title is "The Internet"
 
 ---
 
-## TC-009: Timeout Handling [EXPECTED FAIL]
+### TC-009: Timeout Handling [EXPECTED FAIL]
 
 | Field | Value |
 |-------|-------|
@@ -180,15 +199,14 @@
 **Preconditions:** Application is accessible
 
 **Steps:**
-1. Navigate to `/dynamic_loading/1`
-2. Wait for a non-existent element with 1ms timeout
-3. Assert the element is visible
+1. Navigate to /dynamic_loading/1
+2. Wait for non-existent element with 1ms timeout
 
 **Expected Result:** INTENTIONAL FAILURE - timeout waiting for element
 
 ---
 
-## TC-010: Visual Elements Present
+### TC-010: Visual Elements Present
 
 | Field | Value |
 |-------|-------|
@@ -200,12 +218,15 @@
 
 **Steps:**
 1. Navigate to homepage
-2. Verify the main heading exists
-3. Verify the sub-heading exists
-4. Verify the link list container exists
-5. Verify the footer is present
+2. Verify heading
+3. Verify sub-heading
+4. Verify link list
+5. Verify footer
 
-**Expected Result:** All key visual elements are present on the page
+**Expected Result:** All key visual elements are present
+
+---
+
 
 ---
 

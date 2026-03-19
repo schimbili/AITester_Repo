@@ -4,7 +4,7 @@
 |-------|-------|
 | **Version** | 1.0 |
 | **Author** | QA Automation Team |
-| **Date** | 2026-03-17 |
+| **Date** | 2026-03-19 |
 | **Environment** | Production |
 | **Browser** | Chromium |
 
@@ -113,7 +113,7 @@ This test plan describes the testing approach for **The Internet - Herokuapp**. 
 ## 11. Deliverables
 
 - [x] Test Plan (this document)
-- [x] Test Cases Document
+- [ ] Test Cases Document
 - [ ] Test Execution Report (HTML)
 - [ ] Defect Reports (Jira tickets)
 - [ ] Test Summary Report
