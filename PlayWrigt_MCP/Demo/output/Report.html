@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Test Execution Report - VWO Mobile/Web</title>
+    <style>
+        :root {
+            --vwo-purple: #5636f1;
+            --vwo-light: #f8f9fa;
+            --vwo-dark: #1a1a1a;
+            --status-pass: #28a745;
+            --status-fail: #dc3545;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--vwo-light);
+            color: var(--vwo-dark);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--vwo-purple);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: var(--vwo-purple);
+            margin: 0;
+            font-size: 28px;
+        }
+        .summary-dashboard {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            flex: 1;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .stat-card.total { border-left: 5px solid #333; }
+        .stat-card.pass { border-left: 5px solid var(--status-pass); }
+        .stat-card.fail { border-left: 5px solid var(--status-fail); }
+        .stat-value { font-size: 32px; font-weight: bold; display: block; }
+        .stat-label { font-size: 14px; color: #666; text-transform: uppercase; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid #ddd;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        .badge {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        .badge.pass { background-color: var(--status-pass); }
+        .badge.fail { background-color: var(--status-fail); }
+
+        .case-details {
+            margin-top: 50px;
+        }
+        .case-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .case-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+        .case-body {
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .case-info { flex: 1; }
+        .case-screenshot { flex: 1; text-align: center; }
+        .case-screenshot img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .case-screenshot img:hover { transform: scale(1.02); }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>VWO Login Execution Summary</h1>
+            <div style="text-align: right;">
+                <p style="margin:0; font-weight:bold;">Report Date: 2026-03-19</p>
+                <p style="margin:5px 0 0 0; color:#666; font-size:12px;">Generated via STLC Automation Suite</p>
+            </div>
+        </div>
+
+        <div class="summary-dashboard">
+            <div class="stat-card total">
+                <span class="stat-value">5</span>
+                <span class="stat-label">Total Tests</span>
+            </div>
+            <div class="stat-card pass">
+                <span class="stat-value">5</span>
+                <span class="stat-label">Passed</span>
+            </div>
+            <div class="stat-card fail">
+                <span class="stat-value">0</span>
+                <span class="stat-label">Failed</span>
+            </div>
+        </div>
+
+        <h2>Test Execution Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>TC ID</th>
+                    <th>Scenario</th>
+                    <th>Result</th>
+                    <th>Response Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TC-001</td>
+                    <td>Empty Login Validation</td>
+                    <td><span class="badge pass">PASS</span></td>
+                    <td>200 OK (UI)</td>
+                </tr>
+                <tr>
+                    <td>TC-002</td>
+                    <td>Chinese Character Acceptance</td>
+                    <td><span class="badge pass">PASS</span></td>
+                    <td>401 (Auth)</td>
+                </tr>
+                <tr>
+                    <td>TC-003</td>
+                    <td>Arabic RTL Support</td>
+                    <td><span class="badge pass">PASS</span></td>
+                    <td>401 (Auth)</td>
+                </tr>
+                <tr>
+                    <td>TC-004</td>
+                    <td>Special Characters/Injection</td>
+                    <td><span class="badge pass">PASS</span></td>
+                    <td>403 (Blocked)</td>
+                </tr>
+                <tr>
+                    <td>TC-005</td>
+                    <td>Spanish character sets</td>
+                    <td><span class="badge pass">PASS</span></td>
+                    <td>401 (Auth)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="case-details">
+            <h2>Detailed Observations & Evidence</h2>
+            
+            <div class="case-card">
+                <div class="case-header">
+                    <span style="font-weight:bold;">TC-001: Empty Login Validation</span>
+                    <span class="badge pass">PASS</span>
+                </div>
+                <div class="case-body">
+                    <div class="case-info">
+                        <p><strong>Actual Observation:</strong> Clicking "Sign In" without credentials correctly triggered UI validation and displayed the required mismatch error.</p>
+                        <p><strong>Environment:</strong> Production Chrome</p>
+                    </div>
+                    <div class="case-screenshot">
+                        <img src="screenshots/TC-001_EmptyLogin_Error.png" alt="TC-001 screenshot">
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-header">
+                    <span style="font-weight:bold;">TC-002: Chinese Character Acceptance</span>
+                    <span class="badge pass">PASS</span>
+                </div>
+                <div class="case-body">
+                    <div class="case-info">
+                        <p><strong>Actual Observation:</strong> Entering Chinese characters triggered brute-force protection (reCAPTCHA) and a 401 response.</p>
+                    </div>
+                    <div class="case-screenshot">
+                        <img src="screenshots/TC-002_ChineseLogin.png" alt="TC-002 screenshot">
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-header">
+                    <span style="font-weight:bold;">TC-003: Arabic (RTL) Input Support</span>
+                    <span class="badge pass">PASS</span>
+                </div>
+                <div class="case-body">
+                    <div class="case-info">
+                        <p><strong>Actual Observation:</strong> Arabic characters were correctly rendered and processed, triggering expected validation and reCAPTCHA.</p>
+                    </div>
+                    <div class="case-screenshot">
+                        <img src="screenshots/TC-003_ArabicLogin.png" alt="TC-003 screenshot">
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-header">
+                    <span style="font-weight:bold;">TC-004: Special Characters & Injection</span>
+                    <span class="badge pass">PASS</span>
+                </div>
+                <div class="case-body">
+                    <div class="case-info">
+                        <p><strong>Actual Observation:</strong> Suspicious patterns resulted in a 403 Forbidden status, confirmed by trace logs.</p>
+                    </div>
+                    <div class="case-screenshot">
+                        <img src="screenshots/TC-004_SpecialChars.png" alt="TC-004 screenshot">
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-header">
+                    <span style="font-weight:bold;">TC-005: Spanish character sets</span>
+                    <span class="badge pass">PASS</span>
+                </div>
+                <div class="case-body">
+                    <div class="case-info">
+                        <p><strong>Actual Observation:</strong> Accented characters were treated as part of the string and rejected with standard credential error.</p>
+                    </div>
+                    <div class="case-screenshot">
+                        <img src="screenshots/TC-005_SpanishLogin.png" alt="TC-005 screenshot">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            Finalized Report for AITester STLC Automation Suite © 2026
+        </div>
+    </div>
+</body>
+</html>
