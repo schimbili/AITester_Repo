@@ -1,0 +1,122 @@
+[
+  {
+    "company": "Google",
+    "title": "SDE1",
+    "jobUrl": "https://linkedin.com/jobs/google",
+    "status": "wishlist",
+    "salaryRange": "100",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "TCS",
+    "title": "SDE2",
+    "jobUrl": "https://linkedin.com/jobs/tcs",
+    "status": "applied",
+    "salaryRange": "200",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "CTS",
+    "title": "SDE3",
+    "jobUrl": "https://linkedin.com/jobs/cts",
+    "status": "follow-up",
+    "salaryRange": "300",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "AMAZON",
+    "title": "SDE4",
+    "jobUrl": "https://linkedin.com/jobs/amazon",
+    "status": "interview",
+    "salaryRange": "400",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "FlipKart",
+    "title": "SDE5",
+    "jobUrl": "https://linkedin.com/jobs/flipkart",
+    "status": "offer",
+    "salaryRange": "500",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "Enzen Global",
+    "title": "SDE6",
+    "jobUrl": "https://linkedin.com/jobs/eglobal",
+    "status": "rejected",
+    "salaryRange": "600",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "Persistent Systems",
+    "title": "SDE7",
+    "jobUrl": "https://linkedin.com/jobs/pSystems",
+    "status": "wishlist",
+    "salaryRange": "700",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "voltas",
+    "title": "SDE8",
+    "jobUrl": "https://linkedin.com/jobs/voltas",
+    "status": "applied",
+    "salaryRange": "800",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "benz",
+    "title": "SDE9",
+    "jobUrl": "https://linkedin.com/jobs/benz",
+    "status": "follow-up",
+    "salaryRange": "900",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "volvo",
+    "title": "SDE10",
+    "jobUrl": "https://linkedin.com/jobs/volvo",
+    "status": "interview",
+    "salaryRange": "1000",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "infosys",
+    "title": "SDET1",
+    "jobUrl": "https://linkedin.com/jobs/infosys",
+    "status": "offer",
+    "salaryRange": "1100",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  },
+  {
+    "company": "cybus",
+    "title": "SDET2",
+    "jobUrl": "https://linkedin.com/jobs/cybus",
+    "status": "rejected",
+    "salaryRange": "1200",
+    "dateApplied": "2026-03-21",
+    "resumeUsed": "Default",
+    "notes": "Imported from Excel"
+  }
+]
